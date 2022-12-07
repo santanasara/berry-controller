@@ -13,28 +13,32 @@ export default function Main() {
   const [animation, setAnimation] = useState<Animation>()
   const onStart = async () => {
     await turnOn();
-    const robot = document.getElementById("robot-map")?.animate([
-      { transform: 'translateX(0px)' },
-      { transform: 'translateX(600px) ' },
-      { transform: 'translateX(600px) rotate(90deg)' },
-      { transform: 'translateX(600px) translateY(100px)  rotate(90deg)' },
-      { transform: 'translateX(600px) translateY(100px) rotate(180deg)' },
-      { transform: 'translateX(0px) translateY(100px) rotate(180deg)' },
-      { transform: 'translateX(0px) translateY(100px) rotate(90deg)' },
-      { transform: 'translateX(0px) translateY(200px) rotate(90deg)' },
-      { transform: 'translateX(0px) translateY(200px) rotate(0deg)' },
-      { transform: 'translateX(600px) translateY(200px) rotate(0deg)' },
-      { transform: 'translateX(600px) translateY(200px) rotate(90deg)' },
-      { transform: 'translateX(600px) translateY(300px) rotate(90deg)' },
-      { transform: 'translateX(600px) translateY(300px) rotate(180deg)' },
-      { transform: 'translateX(0px) translateY(300px) rotate(180deg)' },
-    ], {
-      duration: 48000,
-      iterations: Infinity,
-      direction: "alternate",
-      easing: "ease-in",
-    });
-    setAnimation(robot);
+
+    setTimeout(() => {
+      const robot = document.getElementById("robot-map")?.animate([
+        { transform: 'translateX(0px)' },
+        { transform: 'translateX(600px) ' },
+        { transform: 'translateX(600px) rotate(90deg)' },
+        { transform: 'translateX(600px) translateY(100px)  rotate(90deg)' },
+        { transform: 'translateX(600px) translateY(100px) rotate(180deg)' },
+        { transform: 'translateX(0px) translateY(100px) rotate(180deg)' },
+        { transform: 'translateX(0px) translateY(100px) rotate(90deg)' },
+        { transform: 'translateX(0px) translateY(200px) rotate(90deg)' },
+        { transform: 'translateX(0px) translateY(200px) rotate(0deg)' },
+        { transform: 'translateX(600px) translateY(200px) rotate(0deg)' },
+        { transform: 'translateX(600px) translateY(200px) rotate(90deg)' },
+        { transform: 'translateX(600px) translateY(300px) rotate(90deg)' },
+        { transform: 'translateX(600px) translateY(300px) rotate(180deg)' },
+        { transform: 'translateX(0px) translateY(300px) rotate(180deg)' },
+      ], {
+        duration: 48000,
+        iterations: Infinity,
+        direction: "alternate",
+        easing: "ease-in",
+      });
+      setAnimation(robot);
+    }, 5000)
+
   }
 
   const onStop = async () => {
