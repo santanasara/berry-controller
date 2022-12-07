@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { createTheme, ThemeProvider } from "@mui/material";
+
+import "./App.css";
+import ButtonAppBar from "./components/appBar";
+import Main from "./pages/main";
+import Talk from "./pages/talk";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+  },
+  {
+    path: "/talk",
+    element: <Talk />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <ThemeProvider theme={darkTheme}>
+      <div className="App">
+        <ButtonAppBar />
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
 

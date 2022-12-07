@@ -1,0 +1,17 @@
+.robot{
+    width: 90px;
+    height: 90px;
+    background: url(https://www.atacadogames.com/imagem/aspiradores/xiaomi-robo-aspirador-inteligente-mi-robot-vacuum-cleaner-mop-2-pro-branco-mjst1shw/2/122854.jpg?pfdrid_c=true) no-repeat;
+    background-size: cover;
+    transform: rotate(-90deg);
+  }
+  
+
+.map-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40vw;
+    margin: 0 auto;
+    height: 70vh;
+}
